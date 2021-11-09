@@ -16,3 +16,6 @@ spec:
   - group: 'argoproj.io'
     kind: Application
   
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

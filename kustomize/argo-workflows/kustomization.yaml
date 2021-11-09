@@ -1,0 +1,23 @@
+resources:
+- namespace.yaml
+- github.com/argoproj/argo-workflows/manifests/base?ref=v3.2.3
+- ingress.yaml
+
+namespace: argo-workflows
+
+patchesStrategicMerge:
+- patches/client-auth-deployment-arg.yaml
+- patches/container-runtime-executor.yaml
+
+patchesJson6902:
+- patch: |-
+   - { "op": "replace", "path": "/spec/template/spec/containers/0/args/3", "value": "quay.io/argoproj/argoexec:v3.2.3" }
+  target:
+    kind: Deployment
+    name: workflow-controller
+
+images:
+- name: quay.io/argoproj/argocli
+  newTag: v3.2.3
+- name: quay.io/argoproj/workflow-controller
+  newTag: v3.2.3

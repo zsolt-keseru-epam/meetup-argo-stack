@@ -1,0 +1,3 @@
+resources:
+  - app-project.yaml
+  - argo-workflows.yaml

@@ -13,5 +13,5 @@ spec:
   source:
     path: kustomize/overlays/staging
     repoURL: https://github.com/zsolt-keseru-epam/argo-combined-app
-    targetRevision: main
+    targetRevision: master
   syncPolicy: {}

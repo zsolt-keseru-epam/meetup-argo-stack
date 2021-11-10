@@ -6,6 +6,7 @@ metadata:
 spec:
   sourceRepos:
   - 'https://github.com/zsolt-keseru-epam/meetup-argo-stack'
+  - 'https://github.com/zsolt-keseru-epam/argo-combined-app'
   destinations:
   - namespace: 'argo-pipelines'
     server: 'https://kubernetes.default.svc'

@@ -15,6 +15,7 @@ patchesJson6902:
     name: workflow-controller
 - patch: |-
    - { "op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--secure=false" }
+   - { "op": "trplace", "path": "/spec/template/spec/containers/0/readinessProbe/httpGet/scheme", "value": "HTTP" }
   target:
     kind: Deployment
     name: argo-server

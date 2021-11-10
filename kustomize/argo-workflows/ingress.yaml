@@ -13,4 +13,4 @@ spec:
               service:
                 name: argo-server
                 port: 
-                  number: 80
+                  name: web

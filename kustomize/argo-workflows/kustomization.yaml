@@ -13,6 +13,11 @@ patchesJson6902:
   target:
     kind: Deployment
     name: workflow-controller
+- patch: |-
+   - { "op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--secure=false" }
+  target:
+    kind: Deployment
+    name: argo-server
 
 images:
 - name: quay.io/argoproj/argocli

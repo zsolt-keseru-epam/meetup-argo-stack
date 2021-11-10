@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: pipeline
+  namespace: argo-cd
+spec:
+  sourceRepos:
+  - 'https://github.com/zsolt-keseru-epam/meetup-argo-stack'
+  destinations:
+  - namespace: 'argo-pipelines'
+    server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

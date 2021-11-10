@@ -1,0 +1,3 @@
+resources:
+- pipeline-base.yaml
+# - myapp-pipeline.yaml

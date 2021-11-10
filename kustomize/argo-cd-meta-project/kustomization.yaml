@@ -1,2 +1,4 @@
 resources:
-- argo-system
+- meta-app-project.yaml
+- argo-system.yaml
+- pipeline.yaml

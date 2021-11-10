@@ -1,0 +1,5 @@
+resources:
+- controller.yaml
+
+# Got it from here, but direct reference was buggy due-to HTTP redirection:
+# https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.16.0/controller.yaml

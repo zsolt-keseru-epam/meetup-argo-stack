@@ -1,3 +1,4 @@
 resources:
+- app-project.yaml
 - pipeline-base.yaml
 # - myapp-pipeline.yaml

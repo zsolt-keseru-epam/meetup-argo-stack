@@ -2,7 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-workflows
-  namespace: argo-cd
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argo-workflows
@@ -11,5 +13,5 @@ spec:
   source:
     path: kustomize/argo-workflows
     repoURL: https://github.com/zsolt-keseru-epam/meetup-argo-stack
-    targetRevision: main
+    targetRevision: HEAD
   syncPolicy: {}

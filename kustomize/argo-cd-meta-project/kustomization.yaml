@@ -1,3 +1,2 @@
 resources:
-- meta-app-project.yaml
-- meta-app-argo-system.yaml
+- argo-system

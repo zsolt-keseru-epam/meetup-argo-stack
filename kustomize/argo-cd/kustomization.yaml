@@ -3,7 +3,7 @@ resources:
 - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.1.6
 - ingress.yaml
 
-namespace: argo-cd
+namespace: argocd
 
 patchesStrategicMerge:
   - |-

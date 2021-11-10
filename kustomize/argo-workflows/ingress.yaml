@@ -1,15 +1,16 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argo-cd
-  annotations:
-    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+  name: argo-workflows
 spec:
   rules:
     - host: argo-workflows.74.220.20.216.nip.io
       http:
         paths:
           - path: /
+            pathType: ImplementationSpecific
             backend:
-              serviceName: argo-server
-              servicePort: 80
+              service:
+                name: argo-server
+                port: 
+                  number: 80

@@ -2,12 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: argo-system
-  namespace: argo-cd
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   sourceRepos:
   - 'https://github.com/zsolt-keseru-epam/meetup-argo-stack'
   destinations:
-  - namespace: 'argo-cd'
+  - namespace: 'argocd'
     server: 'https://kubernetes.default.svc'
   - namespace: 'argo-events'
     server: 'https://kubernetes.default.svc'

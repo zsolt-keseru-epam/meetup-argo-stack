@@ -9,8 +9,8 @@ spec:
   sourceRepos:
   - 'https://github.com/zsolt-keseru-epam/meetup-argo-stack'
   destinations:
-  - namespace: 'argocd'
-    server: 'https://kubernetes.default.svc'
+  - namespace: '*'
+    server: https://kubernetes.default.svc
 
   namespaceResourceWhitelist:
   - group: 'argoproj.io'

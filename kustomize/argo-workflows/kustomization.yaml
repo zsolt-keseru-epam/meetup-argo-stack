@@ -3,8 +3,6 @@ resources:
 - github.com/argoproj/argo-workflows/manifests/base?ref=v3.2.3
 - ingress.yaml
 
-namespace: argo-workflows
-
 patchesStrategicMerge:
 - patches/client-auth-deployment-arg.yaml
 - patches/container-runtime-executor.yaml

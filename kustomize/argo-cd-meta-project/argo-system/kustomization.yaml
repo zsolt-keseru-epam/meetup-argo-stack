@@ -1,3 +1,4 @@
 resources:
   - app-project.yaml
   - argo-workflows.yaml
+  - argo-events.yaml

@@ -18,6 +18,12 @@ kubectl -n "$NAMESPACE" label secret "$SECRETNAME" \
 ```
 
 ## Bootstrap
+
+Update ingress domains in the following files:
+- kustomize/argo-cd/ingress.yaml
+- kustomize/argo-workflows/ingress.yaml
+- kustomize/myapp-pipeline
+
 ```
 export KUBECONFIG=~/dev/meetup/civo-meetup-kubeconfig
 

@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: github-eventsource
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /push
+        pathType: Prefix
+        backend:
+          service:
+           name: webhook-eventsource-svc
+           port:
+             number: 12000
+    host: myapp-webhook.74.220.20.216.nip.io

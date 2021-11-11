@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pipeline-base
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argo-pipelines
+    server: https://kubernetes.default.svc
+  project: pipeline
+  source:
+    path: kustomize/myapp-pipeline
+    repoURL: https://github.com/zsolt-keseru-epam/meetup-argo-stack
+    targetRevision: HEAD
+  syncPolicy: {}

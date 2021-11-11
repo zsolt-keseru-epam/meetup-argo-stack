@@ -27,8 +27,7 @@ kustomize build kustomize/argo-cd | kubectl apply -f -
 # Get ArgoCD Server admin password
 kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}"| base64 -d && echo
 
-kubectl apply -f kustomize/argo-cd-meta-project/meta-app-project.yaml
-kubectl apply -f kustomize/argo-cd-meta-project/meta-app.yaml
+kustomize build kustomize/argo-cd-meta-project | kubectl apply -f -
 
 # Get Argo Server token
 SECRET=$(kubectl -n argo get sa argo-server -o=jsonpath='{.secrets[0].name}')
@@ -63,6 +62,9 @@ kubectl -n "$NAMESPACE" label secret "$SECRETNAME" \
 ### Sealed secrets
 
 ```
+kubectl create secret generic github-access \
+    --from-literal=token=$(cat .hack/meetup-eventsource-token) \
+    --dry-run=client -o yaml | kubeseal > kustomize/myapp-pipeline/eventsource-secret.yaml
 ```
 
 

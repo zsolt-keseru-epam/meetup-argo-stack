@@ -14,4 +14,7 @@ spec:
     path: kustomize/argo-workflows
     repoURL: https://github.com/zsolt-keseru-epam/meetup-argo-stack
     targetRevision: HEAD
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

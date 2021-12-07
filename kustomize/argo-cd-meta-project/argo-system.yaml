@@ -13,4 +13,7 @@ spec:
     path: kustomize/argo-cd-meta-project/argo-system
     repoURL: https://github.com/zsolt-keseru-epam/meetup-argo-stack
     targetRevision: main
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

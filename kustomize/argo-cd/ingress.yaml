@@ -4,7 +4,7 @@ metadata:
   name: argo-cd
 spec:
   rules:
-    - host: argo-cd.74.220.20.216.nip.io
+    - host: argo-cd.127.0.0.1.nip.io
       http:
         paths:
           - path: /

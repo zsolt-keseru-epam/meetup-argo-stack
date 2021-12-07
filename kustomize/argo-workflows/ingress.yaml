@@ -4,7 +4,7 @@ metadata:
   name: argo-workflows
 spec:
   rules:
-    - host: argo-workflows.74.220.20.216.nip.io
+    - host: argo-workflows.127.0.0.1.nip.io
       http:
         paths:
           - path: /
